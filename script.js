@@ -11,6 +11,9 @@ var complicatedbd = 0;
 var until50 = 5678;
 var until90 = 18862;
 var chain = false;
+var pkmnCheck1 = document.getElementById("pokemon1").value;
+var pkmnCheck2 = document.getElementById("pokemon1").value;
+var pkmnCheck3 = document.getElementById("pokemon1").value;
 
 // Find value of cookies
 function getCookie(cname) {
@@ -30,9 +33,12 @@ function getCookie(cname) {
 }
 
 function updateSprites() {
-    var pkmnCheck1 = document.getElementById("pokemon1").value;
-    var pkmnCheck2 = document.getElementById("pokemon1").value;
-    var pkmnCheck3 = document.getElementById("pokemon1").value;
+    if (!(document.getElementById("pokemon1").value == pkmnCheck1)) return;
+    if (!(document.getElementById("pokemon2").value == pkmnCheck2)) return;
+    if (!(document.getElementById("pokemon3").value == pkmnCheck3)) return;
+    pkmnCheck1 = document.getElementById("pokemon1").value;
+    pkmnCheck2 = document.getElementById("pokemon1").value;
+    pkmnCheck3 = document.getElementById("pokemon1").value;
     document.cookie = "pkmn1save="+pkmnCheck1+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn2save="+pkmnCheck2+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn3save="+pkmnCheck3+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
