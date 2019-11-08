@@ -34,9 +34,6 @@ function getCookie(cname) {
 }
 
 function updateSprites() {
-    if (!(document.getElementById("pokemon1").value == pkmnCheck1)) return;
-    if (!(document.getElementById("pokemon2").value == pkmnCheck2)) return;
-    if (!(document.getElementById("pokemon3").value == pkmnCheck3)) return;
     pkmnCheck1 = document.getElementById("pokemon1").value;
     pkmnCheck2 = document.getElementById("pokemon2").value;
     pkmnCheck3 = document.getElementById("pokemon3").value;
@@ -44,20 +41,17 @@ function updateSprites() {
     document.cookie = "pkmn2save="+pkmnCheck2+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn3save="+pkmnCheck3+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     if (!pkmnCheck1 == "") {
-        var pkmnsprite1 = document.getElementById("pokemon1").value.toLowerCase();
-        document.getElementById("sprite1").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite1 + ".gif";
+        document.getElementById("sprite1").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck1.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite1").src = "blank.png";
     }
     if (!pkmnCheck2 == "") {
-        var pkmnsprite2 = document.getElementById("pokemon2").value.toLowerCase();
-        document.getElementById("sprite2").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite2 + ".gif";
+        document.getElementById("sprite2").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck2.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite2").src = "blank.png";
     }
     if (!pkmnCheck3 == "") {
-        var pkmnsprite3 = document.getElementById("pokemon3").value.toLowerCase();
-        document.getElementById("sprite3").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite3 + ".gif";
+        document.getElementById("sprite3").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck3.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite3").src = "blank.png";
     }
