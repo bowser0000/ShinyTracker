@@ -1,0 +1,52 @@
+body {
+    background: #333
+}
+
+#count {
+    color: white;
+    font-size: 76px;
+}
+
+#counter, #buttons, select, #config, #sprites {
+    text-align:center;
+}
+
+.button {
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    padding: 1px 70px;
+}
+
+#multiform, h1, p {
+    color: white;
+    text-align: center;
+}
+
+#stats {
+    color: white;
+    text-align: center;
+    line-height: 1px;
+}
+
+#chaininfo, #sctext {
+    color: white;
+}
+
+#updatebtn {
+    border: none;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+img {
+    display: inline-block;
+}
+
+#multiform, #pkmninput, #methodselect {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

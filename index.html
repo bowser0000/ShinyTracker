@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Shiny Tracker</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div id="sprites">
+            <img src="blank.png" id="sprite1">
+            <img src="blank.png" id="sprite2">
+            <img src="blank.png" id="sprite3">
+        </div>
+        <div id="counter">
+            <span id="count" onclick="customCount()">0</span>
+        </div>
+        <div id="buttons">
+            <button type="button" class="button" onclick="decCount()">-</button>
+            <button type="button" class="button" onclick="incCount()">+</button>
+        </div>
+        <div id="multiform">
+            <p>Amount to increase/decrease by: &nbsp;</p>
+            <input type="number" name="multi" id="multi" value="1">
+        </div>
+        <div id="stats">
+            <p>Probability: <span id="probability">0</span></p><br>
+            <p>Binomial Probability: <span id="bd">0</span>%</p><br>
+            <p>Until 50%: <span id="50">0</span></p><br>
+            <p>Until 90%: <span id="90">0</span></p>
+        </div>
+        <br>
+        <h1>Setup</h1>
+        <div id="config">
+            <button type="button" id="updatebtn" onclick="update()">Update</button><br>
+            <div id="pkmninput">
+                <p>Pokemon Names (Blank to Remove): &nbsp;</p>
+                <input type="text" id="pokemon1">
+                <input type="text" id="pokemon2">
+                <input type="text" id="pokemon3">
+            </div>
+            <div id="methodselect">
+                <p>Method: &nbsp;</p>
+                <select id="method">
+                    <option value="2re" selected>Generation 2 Random Encounter</option>
+                    <option value="2sp">Generation 2 Breeding with Shiny Parent</option>
+                    <option value="2oej">Generation 2 Japanese Odd Egg</option>
+                    <option value="2oei">Generation 2 International Odd Egg</option>
+                    <option value="3re">Generation 3 Random Encounter</option>
+                    <option value="4re">Generation 4 Random Encounter</option>
+                    <option value="4de">Generation 4 Double Encounter</option>
+                    <option value="4mm">Generation 4 Masuda Method</option>
+                    <option value="4pr">Generation 4 Poke Radar</option>
+                    <option value="5re">Generation 5 Random Encounter</option>
+                    <option value="5de">Generation 5 Double Encounter</option>
+                    <option value="5mm">Generation 5 Masuda Method</option>
+                    <option value="6re">Generation 6 Random Encounter</option>
+                    <option value="6mm">Generation 6 Masuda Method</option>
+                    <option value="6he">Generation 6 Horde Encounter</option>
+                    <option value="6fs">Generation 6 Friend Safari</option>
+                    <option value="6cf">Generation 6 Chain Fishing</option>
+                    <option value="6dn">Generation 6 Dex Nav</option>
+                    <option value="6pr">Generation 6 Poke Radar</option>
+                    <option value="7re">Generation 7 Random Encounter</option>
+                    <option value="7mm">Generation 7 Masuda Method</option>
+                    <option value="7sos">Generation 7 SOS Encounter</option>
+                    <option value="cstm">Custom Odds</option>
+                </select>
+                <input type="checkbox" id="shinycharm"><span id="sctext">Shiny Charm</span><br>
+            </div>
+            <p id="customtext">1 out of </p><input type="number" id="custom" value="1365"><br>
+            <span id="chaininfo"></span><br>
+        </div>
+    </body>
+</html>
