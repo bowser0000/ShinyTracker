@@ -825,7 +825,7 @@ window.onload = function() {
     document.getElementById("count").textContent = parseInt(getCookie("countsave"));
     document.getElementById("multi").value = parseInt(getCookie("amountsave"));
     document.getElementById("method").value = getCookie("methodsave");
-    document.getElementById("shinycharm").value = getCookie("shinycharmsave") == "true";
+    document.getElementById("shinycharm").checked = getCookie("shinycharmsave") == "true";
     document.getElementById("custom").value = parseInt(getCookie("customsave"));
     document.getElementById("pokemon1").value = getCookie("pkmn1save");
     document.getElementById("pokemon2").value = getCookie("pkmn2save");
