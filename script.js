@@ -6,6 +6,8 @@ var customValue = 1365; // Custom odds value
 // Default settings
 var odds = "1/8192";
 var bdodds = 8191/8192;
+var complicated = false;
+var complicatedbd = 0;
 var until50 = 5678;
 var until90 = 18862;
 var chain = false;
@@ -28,19 +30,25 @@ function getCookie(cname) {
 }
 
 function updateSprites() {
-    if (!document.getElementById("pokemon1").value == "") {
+    var pkmnCheck1 = document.getElementById("pokemon1").value;
+    var pkmnCheck2 = document.getElementById("pokemon1").value;
+    var pkmnCheck3 = document.getElementById("pokemon1").value;
+    document.cookie = "pkmn1save="+pkmnCheck1+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
+    document.cookie = "pkmn2save="+pkmnCheck2+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
+    document.cookie = "pkmn3save="+pkmnCheck3+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
+    if (!pkmnCheck1 == "") {
         var pkmnsprite1 = document.getElementById("pokemon1").value.toLowerCase();
         document.getElementById("sprite1").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite1 + ".gif";
     } else {
         document.getElementById("sprite1").src = "blank.png";
     }
-    if (!document.getElementById("pokemon2").value == "") {
+    if (!pkmnCheck2 == "") {
         var pkmnsprite2 = document.getElementById("pokemon2").value.toLowerCase();
         document.getElementById("sprite2").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite2 + ".gif";
     } else {
         document.getElementById("sprite2").src = "blank.png";
     }
-    if (!document.getElementById("pokemon3").value == "") {
+    if (!pkmnCheck3 == "") {
         var pkmnsprite3 = document.getElementById("pokemon3").value.toLowerCase();
         document.getElementById("sprite3").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnsprite3 + ".gif";
     } else {
@@ -200,7 +208,7 @@ function complicatedOdds() {
                 } else {
                     switch (count) {
                         case 0:
-                            odds = "1/1365"
+                            odds = "1/1365";
                             complicatedbd = 0;
                             break;
                         case 1:
@@ -712,9 +720,9 @@ function update() {
         case "6pr":
             complicated = true;
             if (sc) {
-                odds = "?"
+                odds = "?";
             } else {
-                odds = "?"
+                odds = "?";
             }
             break;
         case "7sos":
@@ -723,7 +731,7 @@ function update() {
         case "cstm":
                 document.getElementById("customtext").style.visibility = "visible";
                 document.getElementById("custom").style.visibility = "visible";
-                odds = `1/${customValue}`;
+                odds = '1/' + customValue;
                 bdodds = (customValue - 1) / customValue;
                 until50 = Math.ceil(Math.log(2) / Math.log(customValue / (customValue - 1)));
                 until90 = Math.ceil(Math.log(10) / Math.log(customValue / (customValue - 1)));
@@ -770,7 +778,7 @@ function decCount() {
 
 // + Button
 function incCount() {
-    if (parseInt(document.getElementById("multi").value) == NaN) {
+    if (isNaN(parseInt(document.getElementById("multi").value))) {
         amount = 1;
     } else {
         amount = parseInt(document.getElementById("multi").value);
@@ -809,15 +817,18 @@ window.onload = function() {
     if (getCookie("shinycharmsave") == "") {
         document.cookie = "shinycharmsave=false; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     }
-    if (getCookie("customsave") == "" || getCookie("customsave") == NaN) {
-        document.cookie = "customsave=1365; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/"
+    if (getCookie("customsave") == "" || getCookie("customsave") == "NaN") {
+        document.cookie = "customsave=1365; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     }
     count = parseInt(getCookie("countsave"));
-    amount = parseInt(getCookie("amountsave"))
+    amount = parseInt(getCookie("amountsave"));
     document.getElementById("count").textContent = parseInt(getCookie("countsave"));
     document.getElementById("multi").value = parseInt(getCookie("amountsave"));
     document.getElementById("method").value = getCookie("methodsave");
     document.getElementById("shinycharm").value = getCookie("shinycharmsave") == "true";
     document.getElementById("custom").value = parseInt(getCookie("customsave"));
+    document.getElementById("pokemon1").value = getCookie("pkmn1save");
+    document.getElementById("pokemon2").value = getCookie("pkmn2save");
+    document.getElementById("pokemon3").value = getCookie("pkmn3save");
     update();
 };
