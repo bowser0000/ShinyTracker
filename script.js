@@ -3,6 +3,10 @@ var amount = 1; // Amount to inc/dec by
 var sc; // Shiny charm checkbox value
 var method; // Method dropdown value
 var customValue = 1365; // Custom odds value
+// Pokemon
+var pkmnCheck1;
+var pkmnCheck2;
+var pkmnCheck3;
 // Default settings
 var odds = "1/8192";
 var bdodds = 8191/8192;
@@ -11,9 +15,6 @@ var complicatedbd = 0;
 var until50 = 5678;
 var until90 = 18862;
 var chain = false;
-var pkmnCheck1 = document.getElementById("pokemon1").value;
-var pkmnCheck2 = document.getElementById("pokemon1").value;
-var pkmnCheck3 = document.getElementById("pokemon1").value;
 
 // Find value of cookies
 function getCookie(cname) {
@@ -811,6 +812,9 @@ function customCount() {
 window.onload = function() {
     method = document.getElementById("method").value;
     sc = document.getElementById("shinycharm").checked;
+    pkmnCheck1 = document.getElementById("pokemon1").value;
+    pkmnCheck2 = document.getElementById("pokemon1").value;
+    pkmnCheck3 = document.getElementById("pokemon1").value;
     if (getCookie("countsave") == "" || getCookie("countsave") == "NaN") {
         document.cookie = "countsave=0; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     }
