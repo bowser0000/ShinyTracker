@@ -813,8 +813,8 @@ window.onload = function() {
     method = document.getElementById("method").value;
     sc = document.getElementById("shinycharm").checked;
     pkmnCheck1 = document.getElementById("pokemon1").value;
-    pkmnCheck2 = document.getElementById("pokemon1").value;
-    pkmnCheck3 = document.getElementById("pokemon1").value;
+    pkmnCheck2 = document.getElementById("pokemon2").value;
+    pkmnCheck3 = document.getElementById("pokemon3").value;
     if (getCookie("countsave") == "" || getCookie("countsave") == "NaN") {
         document.cookie = "countsave=0; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     }
