@@ -34,16 +34,15 @@
         <br>
         <h1>Setup</h1>
         <div id="config">
-            <button type="button" id="updatebtn" onclick="update()">Update</button><br>
             <div id="pkmninput">
                 <p>Pokemon Names (Blank to Remove): &nbsp;</p>
-                <input type="text" id="pokemon1">
-                <input type="text" id="pokemon2">
-                <input type="text" id="pokemon3">
+                <input type="text" id="pokemon1" onchange="update();">
+                <input type="text" id="pokemon2" onchange="update();">
+                <input type="text" id="pokemon3" onchange="update();">
             </div>
             <div id="methodselect">
                 <p>Method: &nbsp;</p>
-                <select id="method">
+                <select id="method" onchange="update();">
                     <option value="2re" selected>Generation 2 Random Encounter</option>
                     <option value="2sp">Generation 2 Breeding with Shiny Parent</option>
                     <option value="2oej">Generation 2 Japanese Odd Egg</option>
@@ -68,9 +67,9 @@
                     <option value="7sos">Generation 7 SOS Encounter</option>
                     <option value="cstm">Custom Odds</option>
                 </select>
-                <input type="checkbox" id="shinycharm"><span id="sctext">Shiny Charm</span><br>
+                <input type="checkbox" id="shinycharm" onchange="update();"><span id="sctext">Shiny Charm</span><br>
             </div>
-            <p id="customtext">1 out of </p><input type="number" id="custom" value="1365"><br>
+            <p id="customtext">1 out of </p><input type="number" id="custom" value="1365" onchange="update();"><br>
             <span id="chaininfo"></span><br>
         </div>
     </body>
