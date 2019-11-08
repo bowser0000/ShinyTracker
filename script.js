@@ -575,7 +575,6 @@ function update() {
     chain = false;
     document.getElementById("customtext").style.visibility = "hidden";
     document.getElementById("custom").style.visibility = "hidden";
-    updateSprites();
     switch (method) {
         // Gen 2, Gen 3, Gen 4 Random Encounter
         case "2re":
@@ -832,4 +831,5 @@ window.onload = function() {
     document.getElementById("pokemon2").value = getCookie("pkmn2save");
     document.getElementById("pokemon3").value = getCookie("pkmn3save");
     update();
+    updateSprites();
 };

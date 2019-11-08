@@ -23,7 +23,7 @@
         </div>
         <div id="multiform">
             <p>Amount to increase/decrease by: &nbsp;</p>
-            <input type="number" name="multi" id="multi" value="1">
+            <input type="number" name="multi" id="multi" value="1" onchange="update();">
         </div>
         <div id="stats">
             <p>Probability: <span id="probability">0</span></p><br>
@@ -36,9 +36,9 @@
         <div id="config">
             <div id="pkmninput">
                 <p>Pokemon Names (Blank to Remove): &nbsp;</p>
-                <input type="text" id="pokemon1" onchange="update();">
-                <input type="text" id="pokemon2" onchange="update();">
-                <input type="text" id="pokemon3" onchange="update();">
+                <input type="text" id="pokemon1" onchange="updateSprites();">
+                <input type="text" id="pokemon2" onchange="updateSprites();">
+                <input type="text" id="pokemon3" onchange="updateSprites();">
             </div>
             <div id="methodselect">
                 <p>Method: &nbsp;</p>
