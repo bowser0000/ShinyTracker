@@ -61,8 +61,9 @@ function updateSprites() {
 
 function complicatedOdds() {
     switch (method) {
-        // Gen 4 Poke Radar
+        // Gen 4, Gen 6 Poke Radar
         case "4pr":
+        case "6pr":
             chain = true;
             until50 = 175;
             until90 = 496;
@@ -502,13 +503,6 @@ function complicatedOdds() {
                 }
             }
             break;
-        // Gen 6 Poke Radar
-        case "6pr":
-            until50 = 0;
-            until90 = 0;
-            complicatedbd = 0;
-            chain = true;
-            break;
         // Gen 7 SOS
         case "7sos":
             chain = true;
@@ -719,11 +713,6 @@ function update() {
             break;
         case "6pr":
             complicated = true;
-            if (sc) {
-                odds = "?";
-            } else {
-                odds = "?";
-            }
             break;
         case "7sos":
             complicated = true;
