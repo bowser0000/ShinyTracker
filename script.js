@@ -37,8 +37,8 @@ function updateSprites() {
     if (!(document.getElementById("pokemon2").value == pkmnCheck2)) return;
     if (!(document.getElementById("pokemon3").value == pkmnCheck3)) return;
     pkmnCheck1 = document.getElementById("pokemon1").value;
-    pkmnCheck2 = document.getElementById("pokemon1").value;
-    pkmnCheck3 = document.getElementById("pokemon1").value;
+    pkmnCheck2 = document.getElementById("pokemon2").value;
+    pkmnCheck3 = document.getElementById("pokemon3").value;
     document.cookie = "pkmn1save="+pkmnCheck1+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn2save="+pkmnCheck2+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn3save="+pkmnCheck3+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
@@ -570,7 +570,7 @@ function update() {
     document.cookie = "countsave="+count+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "amountsave="+amount+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "methodsave="+document.getElementById("method").value+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
-    document.cookie = "shinycharmsave="+document.getElementById("method").value+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
+    document.cookie = "shinycharmsave="+document.getElementById("shinycharm").value+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.getElementById("count").textContent = count;
     method = document.getElementById("method").value;
     sc = document.getElementById("shinycharm").checked;
