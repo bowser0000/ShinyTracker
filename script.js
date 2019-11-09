@@ -785,7 +785,9 @@ function incCount() {
 
 // Clicking on number
 function customCount() {
-    count = parseInt(prompt("Enter the count to set."));
+    countSafe = parseInt(prompt("Enter the count to set."));
+    if (isNaN(countSafe)) return;
+    count = countSafe;
     document.getElementById("count").textContent = count;
     update();
 }
