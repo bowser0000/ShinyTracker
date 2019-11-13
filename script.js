@@ -2,7 +2,6 @@ var count = 0; // Counter
 var amount = 1; // Amount to inc/dec by
 var sc; // Shiny charm checkbox value
 var method; // Method dropdown value
-var customValue = 1365; // Custom odds value
 // Pokemon
 var pkmnCheck1;
 var pkmnCheck2;
@@ -15,6 +14,10 @@ var complicatedbd = 0;
 var until50 = 5678;
 var until90 = 18862;
 var chain = false;
+var customValue = 1365;
+var genSubmit = "7";
+var methodSubmit = "encounters";
+var countSafe = 0;
 
 // Find value of cookies
 function getCookie(cname) {
@@ -33,6 +36,7 @@ function getCookie(cname) {
     return "";
 }
 
+// Update pokemon sprites
 function updateSprites() {
     pkmnCheck1 = document.getElementById("pokemon1").value;
     pkmnCheck2 = document.getElementById("pokemon2").value;
@@ -55,6 +59,106 @@ function updateSprites() {
     } else {
         document.getElementById("sprite3").src = "blank.png";
     }
+}
+
+// Update share links
+function updateLinks() {
+    switch (method) {
+        case "2re":
+            genSubmit = "2";
+            methodSubmit = "encounters";
+            break;
+        case "2sp":
+            genSubmit = "2";
+            methodSubmit = "eggs";
+            break;
+        case "2oej":
+        case "2oei":
+            genSubmit = "2";
+            methodSubmit = "odd eggs";
+            break;
+        case "3re":
+            genSubmit = "3";
+            methodSubmit = "encounters";
+            break;
+        case "4re":
+            genSubmit = "4";
+            methodSubmit = "encounters";
+            break;
+        case "4de":
+            genSubmit = "4";
+            methodSubmit = "double encounters";
+            break;
+        case "4mm":
+            genSubmit = "4";
+            methodSubmit = "eggs";
+            break;
+        case "4pr":
+            genSubmit = "4";
+            methodSubmit = "radar encounters";
+            break;
+        case "5re":
+            genSubmit = "5";
+            methodSubmit = "encounters";
+            break;
+        case "5de":
+            genSubmit = "5";
+            methodSubmit = "double encounters";
+            break;
+        case "5mm":
+            genSubmit = "5";
+            methodSubmit = "eggs";
+            break;
+        case "6re":
+            genSubmit = "6";
+            methodSubmit = "encounters";
+            break;
+        case "6mm":
+            genSubmit = "6";
+            methodSubmit = "eggs";
+            break;
+        case "6he":
+            genSubmit = "6";
+            methodSubmit = "horde encounters";
+            break;
+        case "6fs":
+            genSubmit = "6";
+            methodSubmit = "friend safari encounters";
+            break;
+        case "6cf":
+            genSubmit = "6";
+            methodSubmit = "fishing encounters";
+            break;
+        case "6dn":
+            genSubmit = "6";
+            methodSubmit = "dexnav encounters";
+            break;
+        case "6pr":
+            genSubmit = "6";
+            methodSubmit = "radar encounters";
+            break;
+        case "7re":
+            genSubmit = "7";
+            methodSubmit = "encounters";
+            break;
+        case "7mm":
+            genSubmit = "7";
+            methodSubmit = "eggs";
+            break;
+        case "7sos":
+            genSubmit = "7";
+            methodSubmit = "calls";
+            break;
+        case "cstm":
+            genSubmit = "#";
+            methodSubmit = "INSERTMETHOD";
+            break;
+        default:
+            genSubmit = "ERROR";
+            methodSubmit = "ERROR";
+    }
+    document.getElementById("reddit").href = "https://www.reddit.com/r/ShinyPokemon/submit?title=[" + genSubmit + "]%20Shiny%20" + pkmnCheck1 + "%20after%20" + count + "%20" + methodSubmit;
+    return false;
 }
 
 // Extremely long function for dynamic odds
@@ -569,6 +673,7 @@ function update() {
     chain = false;
     document.getElementById("customtext").style.visibility = "hidden";
     document.getElementById("custom").style.visibility = "hidden";
+    updateLinks();
     switch (method) {
         // Gen 2, Gen 3, Gen 4 Random Encounter
         case "2re":
@@ -747,24 +852,6 @@ function update() {
     document.getElementById("90").textContent = until90 - count;
 }
 
-// - Button
-function decCount() {
-    if (isNaN(parseInt(document.getElementById("multi").value))) {
-        amount = 1;
-    } else {
-        amount = parseInt(document.getElementById("multi").value);
-    }
-    if (amount < 0) {
-        document.getElementById("multi").value = 0;
-        amount = 0;
-    }
-    count -= amount;
-    if (count < 0) {
-        count = 0;
-    }
-    update();
-}
-
 // + Button
 function incCount() {
     if (isNaN(parseInt(document.getElementById("multi").value))) {
@@ -779,6 +866,24 @@ function incCount() {
     count += amount;
     if (count > 2147483637) {
         count = 2147483637;
+    }
+    update();
+}
+
+// - Button
+function decCount() {
+    if (isNaN(parseInt(document.getElementById("multi").value))) {
+        amount = 1;
+    } else {
+        amount = parseInt(document.getElementById("multi").value);
+    }
+    if (amount < 0) {
+        document.getElementById("multi").value = 0;
+        amount = 0;
+    }
+    count -= amount;
+    if (count < 0) {
+        count = 0;
     }
     update();
 }
