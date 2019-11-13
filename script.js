@@ -928,4 +928,5 @@ window.onload = function() {
     document.getElementById("pokemon3").value = getCookie("pkmn3save");
     update();
     updateSprites();
+    updateLinks();
 };
