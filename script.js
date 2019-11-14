@@ -864,9 +864,7 @@ function incCount() {
         amount = 0;
     }
     count += amount;
-    if (count > 2147483637) {
-        count = 2147483637;
-    }
+    if (count > 2147483637) count = 2147483637;
     update();
 }
 
@@ -882,9 +880,7 @@ function decCount() {
         amount = 0;
     }
     count -= amount;
-    if (count < 0) {
-        count = 0;
-    }
+    if (count < 0) count = 0;
     update();
 }
 
@@ -892,6 +888,8 @@ function decCount() {
 function customCount() {
     countSafe = parseInt(prompt("Enter the count to set."));
     if (isNaN(countSafe)) return;
+    if (countSafe < 0) countSafe = 0;
+    if (countSafe > 2147483637) countSafe = 2147483637;
     count = countSafe;
     document.getElementById("count").textContent = count;
     update();
