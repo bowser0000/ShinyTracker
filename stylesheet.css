@@ -50,3 +50,37 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+.tab {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tab button {
+    background-color: #aaa;
+    font-size: 15px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 150px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}

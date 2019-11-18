@@ -9,73 +9,81 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
-        <div id="sprites">
-            <img src="blank.png" id="sprite1">
-            <img src="blank.png" id="sprite2">
-            <img src="blank.png" id="sprite3">
-        </div>
-        <div id="counter">
-            <span id="count" onclick="customCount()">0</span>
-        </div>
-        <div id="buttons">
-            <button type="button" class="button" onclick="decCount()">-</button>
-            <button type="button" class="button" onclick="incCount()">+</button>
-        </div>
-        <div id="multiform">
-            <p>Amount to increase/decrease by: &nbsp;</p>
-            <input type="number" name="multi" id="multi" value="1" onchange="update();">
-        </div>
-        <div id="stats">
-            <p>Probability: <span id="probability">0</span></p><br>
-            <p>Binomial Probability: <span id="bd">0</span>%</p><br>
-            <p>Until 50%: <span id="50">0</span></p><br>
-            <p>Until 90%: <span id="90">0</span></p>
-        </div>
-        <br>
-        <div id="share">
-            <a href="https://www.reddit.com/r/ShinyPokemon/submit?title=Default%20Title" target="_blank" id="reddit">
-                <img src="Reddit.png" alt="Submit to r/ShinyPokemon" width="25" height="25">
-            </a>
-        </div>
-        <h1>Setup</h1>
-        <div id="config">
-            <div id="pkmninput">
-                <p>Pokemon Names (Blank to Remove): &nbsp;</p>
-                <input type="text" id="pokemon1" onchange="updateSprites();">
-                <input type="text" id="pokemon2" onchange="updateSprites();">
-                <input type="text" id="pokemon3" onchange="updateSprites();">
+        <div id="maintab" class="tabcontent">
+            <div id="sprites">
+                <img src="blank.png" id="sprite1">
+                <img src="blank.png" id="sprite2">
+                <img src="blank.png" id="sprite3">
             </div>
-            <div id="methodselect">
-                <p>Method: &nbsp;</p>
-                <select id="method" onchange="update();">
-                    <option value="2re" selected>Generation 2 Random Encounter</option>
-                    <option value="2sp">Generation 2 Breeding with Shiny Parent</option>
-                    <option value="2oej">Generation 2 Japanese Odd Egg</option>
-                    <option value="2oei">Generation 2 International Odd Egg</option>
-                    <option value="3re">Generation 3 Random Encounter</option>
-                    <option value="4re">Generation 4 Random Encounter</option>
-                    <option value="4de">Generation 4 Double Encounter</option>
-                    <option value="4mm">Generation 4 Masuda Method</option>
-                    <option value="4pr">Generation 4 Poke Radar</option>
-                    <option value="5re">Generation 5 Random Encounter</option>
-                    <option value="5de">Generation 5 Double Encounter</option>
-                    <option value="5mm">Generation 5 Masuda Method</option>
-                    <option value="6re">Generation 6 Random Encounter</option>
-                    <option value="6mm">Generation 6 Masuda Method</option>
-                    <option value="6he">Generation 6 Horde Encounter</option>
-                    <option value="6fs">Generation 6 Friend Safari</option>
-                    <option value="6cf">Generation 6 Chain Fishing</option>
-                    <option value="6dn">Generation 6 Dex Nav</option>
-                    <option value="6pr">Generation 6 Poke Radar</option>
-                    <option value="7re">Generation 7 Random Encounter</option>
-                    <option value="7mm">Generation 7 Masuda Method</option>
-                    <option value="7sos">Generation 7 SOS Encounter</option>
-                    <option value="cstm">Custom Odds</option>
-                </select>
-                <input type="checkbox" id="shinycharm" onchange="update();"><span id="sctext">Shiny Charm</span><br>
+            <div id="counter">
+                <span id="count" onclick="customCount()">0</span>
             </div>
-            <p id="customtext">1 out of </p><input type="number" id="custom" value="1365" onchange="update();"><br>
-            <span id="chaininfo"></span><br>
+            <div id="buttons">
+                <button type="button" class="button" onclick="decCount()">-</button>
+                <button type="button" class="button" onclick="incCount()">+</button>
+            </div>
+            <div id="multiform">
+                <p>Amount to increase/decrease by: &nbsp;</p>
+                <input type="number" name="multi" id="multi" value="1" onchange="update();">
+            </div>
+            <div id="stats">
+                <p>Probability: <span id="probability">0</span></p><br>
+                <p>Binomial Probability: <span id="bd">0</span>%</p><br>
+                <p>Until 50%: <span id="50">0</span></p><br>
+                <p>Until 90%: <span id="90">0</span></p>
+            </div>
+            <br>
+            <div id="share">
+                <a href="https://www.reddit.com/r/ShinyPokemon/submit?title=Default%20Title" target="_blank" id="reddit">
+                    <img src="Reddit.png" alt="Submit to r/ShinyPokemon" width="25" height="25">
+                </a>
+            </div>
         </div>
+        <div id="setuptab" class="tabcontent">
+            <h1>Setup</h1>
+            <div id="config">
+                <div id="pkmninput">
+                    <p>Pokemon Names (Blank to Remove): &nbsp;</p>
+                    <input type="text" id="pokemon1" onchange="updateSprites();">
+                    <input type="text" id="pokemon2" onchange="updateSprites();">
+                    <input type="text" id="pokemon3" onchange="updateSprites();">
+                </div>
+                <div id="methodselect">
+                    <p>Method: &nbsp;</p>
+                    <select id="method" onchange="update();">
+                        <option value="2re" selected>Generation 2 Random Encounter</option>
+                        <option value="2sp">Generation 2 Breeding with Shiny Parent</option>
+                        <option value="2oej">Generation 2 Japanese Odd Egg</option>
+                        <option value="2oei">Generation 2 International Odd Egg</option>
+                        <option value="3re">Generation 3 Random Encounter</option>
+                        <option value="4re">Generation 4 Random Encounter</option>
+                        <option value="4de">Generation 4 Double Encounter</option>
+                        <option value="4mm">Generation 4 Masuda Method</option>
+                        <option value="4pr">Generation 4 Poke Radar</option>
+                        <option value="5re">Generation 5 Random Encounter</option>
+                        <option value="5de">Generation 5 Double Encounter</option>
+                        <option value="5mm">Generation 5 Masuda Method</option>
+                        <option value="6re">Generation 6 Random Encounter</option>
+                        <option value="6mm">Generation 6 Masuda Method</option>
+                        <option value="6he">Generation 6 Horde Encounter</option>
+                        <option value="6fs">Generation 6 Friend Safari</option>
+                        <option value="6cf">Generation 6 Chain Fishing</option>
+                        <option value="6dn">Generation 6 Dex Nav</option>
+                        <option value="6pr">Generation 6 Poke Radar</option>
+                        <option value="7re">Generation 7 Random Encounter</option>
+                        <option value="7mm">Generation 7 Masuda Method</option>
+                        <option value="7sos">Generation 7 SOS Encounter</option>
+                        <option value="cstm">Custom Odds</option>
+                    </select>
+                    <input type="checkbox" id="shinycharm" onchange="update();"><span id="sctext">Shiny Charm</span><br>
+                </div>
+                <p id="customtext">1 out of </p><input type="number" id="custom" value="1365" onchange="update();"><br>
+                <span id="chaininfo"></span><br>
+            </div>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'maintab')" id="defaultOpen">Main</button>
+            <button class="tablinks" onclick="openTab(event, 'setuptab')">Setup</button>
+        </div>              
     </body>
 </html>
