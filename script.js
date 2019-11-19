@@ -150,7 +150,7 @@ function updateLinks() {
             methodSubmit = "calls";
             break;
         case "cstm":
-            genSubmit = "#";
+            genSubmit = "Gen %23";
             methodSubmit = "INSERTMETHOD";
             break;
         default:
