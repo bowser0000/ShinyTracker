@@ -895,6 +895,14 @@ function customCount() {
     update();
 }
 
+document.addEventListener("keyup", function(event) {
+    if (event.key == "=") {
+        incCount();
+    } else if (event.key == "-") {
+        decCount();
+    }
+});
+
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
