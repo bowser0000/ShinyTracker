@@ -45,17 +45,17 @@ function updateSprites() {
     document.cookie = "pkmn2save="+pkmnCheck2+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     document.cookie = "pkmn3save="+pkmnCheck3+"; expires=Sat, 20 Apr 2069 12:00:00 GMT;path=/";
     if (!pkmnCheck1 == "") {
-        document.getElementById("sprite1").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck1.toLowerCase() + ".gif";
+        document.getElementById("sprite1").src = "https://play.pokemonshowdown.com/sprites/ani-shiny/" + pkmnCheck1.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite1").src = "blank.png";
     }
     if (!pkmnCheck2 == "") {
-        document.getElementById("sprite2").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck2.toLowerCase() + ".gif";
+        document.getElementById("sprite2").src = "https://play.pokemonshowdown.com/sprites/ani-shiny/" + pkmnCheck2.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite2").src = "blank.png";
     }
     if (!pkmnCheck3 == "") {
-        document.getElementById("sprite3").src = "https://pokemon.night.coffee/icons/shiny/" + pkmnCheck3.toLowerCase() + ".gif";
+        document.getElementById("sprite3").src = "https://play.pokemonshowdown.com/sprites/ani-shiny/" + pkmnCheck3.toLowerCase() + ".gif";
     } else {
         document.getElementById("sprite3").src = "blank.png";
     }
