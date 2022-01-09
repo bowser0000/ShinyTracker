@@ -170,6 +170,10 @@ function updateLinks() {
             genSubmit = "8";
             methodSubmit = "radar encounters";
             break;
+        case "8de":
+            genSubmit = "8";
+            methodSubmit = "double encounters";
+            break;
         case "cstm":
             genSubmit = "Gen %23";
             methodSubmit = "INSERTMETHOD";
@@ -1072,6 +1076,12 @@ function update() {
             bdodds = 4095/4096;
             until50 = 2839;
             until90 = 9431;
+            break;
+        case "8de":
+            odds = "1/2048";
+            bdodds = 2047/2048;
+            until50 = 1420;
+            until90 = 4715;
             break;
         // Complicated Odds
         case "4pr":
